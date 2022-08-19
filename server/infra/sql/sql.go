@@ -8,7 +8,7 @@ import (
 )
 
 func NewDriver() *sql.DB {
-	db, err := sql.Open("mysql", config.GetDbUri())
+	db, err := sql.Open("postgres", config.GetDbUri())
 	if err != nil {
 		log.Println("DB connect failed")
 		panic(err)
