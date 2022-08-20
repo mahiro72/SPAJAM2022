@@ -9,6 +9,7 @@ import (
 
 type DrinkUsecase interface {
 	Get(ctx context.Context, id int) (*entity.Drink, error)
+	Update(ctx context.Context, drinkID int, bestTime int) error
 }
 
 type drinkUsecase struct {
@@ -23,4 +24,8 @@ func NewDrinkUsecase(dr repository.IDrinkRepository) DrinkUsecase {
 func (du *drinkUsecase) Get(ctx context.Context, id int) (drink *entity.Drink, err error) {
 	drink, err = du.drinkRepository.Get(ctx, id)
 	return
+}
+
+func (du *drinkUsecase) Update(ctx context.Context, drinkID int, bestTime int) error {
+	return du.drinkRepository.Update(ctx, drinkID, bestTime)
 }

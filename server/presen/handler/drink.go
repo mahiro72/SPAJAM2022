@@ -14,6 +14,7 @@ import (
 
 type DrinkHandler interface {
 	Best(http.ResponseWriter, *http.Request)
+	Update(http.ResponseWriter, *http.Request)
 }
 
 type drinkHandler struct {
@@ -53,6 +54,29 @@ func (dh *drinkHandler) Best(w http.ResponseWriter, r *http.Request) {
 
 	je := json.NewEncoder(w)
 	if err := je.Encode(res); err != nil {
+		zap.Error(err)
+	}
+}
+
+func (dh *drinkHandler) Update(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPut {
+		w.WriteHeader(http.StatusMethodNotAllowed)
+		zap.Error(myError.ErrMethodNotFound)
+		return
+	}
+
+	var req request.DrinkUpdateRequest
+	decoder := json.NewDecoder(r.Body)
+	err := decoder.Decode(&req)
+
+	if err != nil {
+		zap.Error(err)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusNoContent)
+
+	if err = dh.drinkUsecase.Update(r.Context(), req.ID, req.BestTime); err != nil {
 		zap.Error(err)
 	}
 }
