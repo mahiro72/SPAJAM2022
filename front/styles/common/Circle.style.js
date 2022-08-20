@@ -13,7 +13,7 @@ const circleStyles = StyleSheet.create({
     },
     drinkCircle:{
         borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2,
-        width: Dimensions.get('window').width * 0.30,
+        width: Dimensions.get('window').width * 0.70,
         height: Dimensions.get('window').width * 0.30,
         backgroundColor:'#fff',
         justifyContent: 'center',

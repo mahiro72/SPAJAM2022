@@ -15,6 +15,12 @@ const fontStyles = StyleSheet.create({
         fontSize: 40,
         fontWeight: "bold",
         color: "#555"  
+    },
+    drinkText:{
+        margin:20,
+        fontSize:20,
+        fontWeight:'bold',
+        color: "#333"
     }
 });
 
