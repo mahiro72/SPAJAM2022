@@ -39,3 +39,20 @@ func (dr *drinkRepository) Get(ctx context.Context, id int) (*entity.Drink, erro
 
 	return de, nil
 }
+
+func (dr *drinkRepository) Update(ctx context.Context, drinkID int, bestTime int) error {
+	const update = `UPDATE drink Set best_time = $1 WHERE id = $2`
+
+	stmt, err := dr.db.PrepareContext(ctx, update)
+	if err != nil {
+		return err
+	}
+
+	defer stmt.Close()
+
+	_, err = stmt.ExecContext(ctx, bestTime, drinkID)
+	if err != nil {
+		return err
+	}
+	return nil
+}

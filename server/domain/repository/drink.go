@@ -8,4 +8,5 @@ import (
 
 type IDrinkRepository interface {
 	Get(ctx context.Context, id int) (*entity.Drink, error)
+	Update(ctx context.Context, drinkID int, bestTime int) error
 }
