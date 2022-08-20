@@ -21,3 +21,12 @@ func InitDrinkHandler(driver *sql.DB) handler.DrinkHandler {
 	)
 	return nil
 }
+
+func InitFeedbackHandler(driver *sql.DB) handler.FeedbackHandler {
+	wire.Build(
+		repository.NewFeedbackRepository,
+		usecase.NewFeedbackUsecase,
+		handler.NewFeedbackHandler,
+	)
+	return nil
+}

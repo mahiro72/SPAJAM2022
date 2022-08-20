@@ -15,8 +15,9 @@ import (
 func main() {
 	db := sql.NewDriver()
 	drinkHandler := wire.InitDrinkHandler(db)
+	feedbackHandler := wire.InitFeedbackHandler(db)
 
-	handler.InitRouting(drinkHandler)
+	handler.InitRouting(drinkHandler, feedbackHandler)
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
