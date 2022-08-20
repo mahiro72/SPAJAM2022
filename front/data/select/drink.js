@@ -1,23 +1,25 @@
+import default_drink from "../img/default-drink.png"
+
 const drinkData = [
     {
         "name":"お茶",
-        "img":","
+        "img":default_drink
     },
     {
         "name":"ビール",
-        "img":","
+        "img":default_drink
     },
     {
         "name":"スポーツドリンク",
-        "img":","
+        "img":default_drink
     },
     {
         "name":"コーラ",
-        "img":","
+        "img":default_drink
     },
     {
         "name":"紅茶",
-        "img":","
+        "img":default_drink
     }
 ]
 

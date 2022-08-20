@@ -8,12 +8,18 @@ import scrollStyles from '../../../styles/common/Scroll.style';
 
 const Select = () => {
   return (
-    <View style={{marginTop:30}}>
-        <FlatList
-          data={drinkData}
-          numColumns={2}
-          renderItem={(drink)=><SecDrink drink={drink}/>}
-       />
+    <View style={{marginTop:60,alignItems: 'center'}}>
+      <ScrollView 
+        showsVerticalScrollIndicator={false}
+      >
+      {
+        drinkData.map((drink,idx)=>{
+          return (
+            <SecDrink drink={drink} />
+          )
+        })
+      }
+      </ScrollView>
     </View>
   )
 }
