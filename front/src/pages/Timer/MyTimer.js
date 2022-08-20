@@ -28,10 +28,6 @@ function MyTimer({ expiryTimestamp,initTimeSec ,setPage}) {
         onExpire: () => console.warn("onExpire called"),
       });
 
-//   useEffect(() => {
-//     pause();
-//   }, [])
-
   const getSeconds = (h,m,s)=>{
     return h*3600+m*60+s;
   }
@@ -76,17 +72,6 @@ function MyTimer({ expiryTimestamp,initTimeSec ,setPage}) {
                 {hours}h {minutes}m {seconds}s    
             </Text>  
         </View>
-        {
-            isRunning && seconds>0
-            ?<Button onPress={pause}  title={"pause"} />
-            :null
-        }
-      
-        {
-            !isRunning && seconds>0
-            ?<Button onPress={start}  title={"start"} />
-            :null
-        }
         {
             getSeconds(hours,minutes,seconds)===0
             ?<Button onPress={()=>setPage("feedback")}  title={"Finish"} />
