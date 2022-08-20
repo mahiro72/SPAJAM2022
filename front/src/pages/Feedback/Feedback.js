@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { TouchableHighlight, Text, Image, View,Button } from 'react-native';
 
 import circleStyles from '../../../styles/common/Circle.style';
