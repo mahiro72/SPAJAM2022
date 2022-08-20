@@ -10,6 +10,11 @@ const fontStyles = StyleSheet.create({
         fontSize: 60,
         // fontWeight: "bold",
         color: "#eee"  
+    },
+    timerText:{
+        fontSize: 40,
+        fontWeight: "bold",
+        color: "#555"  
     }
 });
 

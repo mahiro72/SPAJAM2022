@@ -3,7 +3,10 @@ import { useState } from 'react';
 import { Button, Text, View } from 'react-native';
 import Select from './src/pages/Select/Select';
 import Top from './src/pages/Top/Top';
+import Timer from './src/pages/Timer/Timer';
+import Feedback from './src/pages/Feedback/Feedback';
 
+// style
 import styles from './styles/App.style';
 
 export default function App() {
@@ -17,13 +20,24 @@ export default function App() {
       }
       {
         page==="select"
-        ?
-
-        <>
+        ?<>
           <Select />
+          <Button onPress={()=>{setPage("timer")}} title={"next"} />
           <Button onPress={()=>{setPage("top")}} title={"back"} />
         </>
         :null
+      }
+      {
+        page==="timer"
+        ?<Timer setPage={setPage}/>
+        :
+        null
+      }
+      {
+        page==="feedback"
+        ?<Feedback setPage={setPage}/>
+        :
+        null
       }
       {/* <StatusBar style="auto" /> */}
     </View>

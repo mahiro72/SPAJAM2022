@@ -19,7 +19,16 @@ const circleStyles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         margin:7,
-    }
+    },
+    timerCircle:{
+        borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2,
+        width: Dimensions.get('window').width * 0.90,
+        height: Dimensions.get('window').width * 0.90,
+        backgroundColor:'#fff',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin:7,
+    },
 });
 
 export default circleStyles;
