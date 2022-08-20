@@ -6,6 +6,12 @@ import Top from './src/pages/Top/Top';
 import Timer from './src/pages/Timer/Timer';
 import Feedback from './src/pages/Feedback/Feedback';
 
+// 警告の削除
+import { LogBox } from "react-native";
+LogBox.ignoreLogs([
+  "Setting a timer",
+]);
+
 // style
 import styles from './styles/App.style';
 

@@ -15,7 +15,7 @@ const Select = () => {
       {
         drinkData.map((drink,idx)=>{
           return (
-            <SecDrink drink={drink} />
+            <SecDrink key={idx} drink={drink} />
           )
         })
       }
