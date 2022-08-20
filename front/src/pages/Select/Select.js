@@ -8,7 +8,7 @@ import scrollStyles from '../../../styles/common/Scroll.style';
 
 const Select = () => {
   return (
-    <View style={{marginTop:100}}>
+    <View style={{marginTop:30}}>
         <FlatList
           data={drinkData}
           numColumns={2}
