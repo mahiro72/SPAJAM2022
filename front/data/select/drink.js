@@ -1,25 +1,30 @@
 import default_drink from "../img/default-drink.png"
+import green_tea from "../img/green_tea.png"
+import beer from "../img/beer.png"
+import sports_drink from "../img/sports_drink.png"
+import cola from "../img/cola.png"
+import tea from "../img/tea.png"
 
 const drinkData = [
     {
         "name":"お茶",
-        "img":default_drink
+        "img":green_tea
     },
     {
         "name":"ビール",
-        "img":default_drink
+        "img":beer
     },
     {
         "name":"スポーツドリンク",
-        "img":default_drink
+        "img":sports_drink
     },
     {
         "name":"コーラ",
-        "img":default_drink
+        "img":cola
     },
     {
         "name":"紅茶",
-        "img":default_drink
+        "img":tea
     }
 ]
 

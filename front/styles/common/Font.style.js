@@ -22,7 +22,8 @@ const fontStyles = StyleSheet.create({
         color: "#555"  
     },
     drinkText:{
-        margin:20,
+		width:80,
+        margin:10,
         fontSize:20,
         fontWeight:'bold',
         color: "#333"
