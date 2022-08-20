@@ -1,20 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, Text, View } from 'react-native';
+import Top from './src/pages/Top/Top';
+
+import styles from './styles/App.style';
+
 
 export default function App() {
+  const [page, setPage] = useState("top")
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {
+        page==="top" 
+        ?<Top setPage={setPage}/> 
+        :null
+      }
+      {
+        page!=="top"
+        ?
+        <>
+          <Button onPress={()=>{setPage("top")}} title={"back"} />
+        </>
+        :null
+      }
+      {/* <StatusBar style="auto" /> */}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
