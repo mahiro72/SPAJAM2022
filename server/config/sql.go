@@ -10,14 +10,13 @@ var (
 	dbPwd  = os.Getenv("DB_PASS")
 	dbHost = os.Getenv("DB_Host")
 	dbName = os.Getenv("DB_NAME")
+	dbURL  = os.Getenv("DATABASE_URL")
 )
 
 func GetDbUri() string {
 	if Environment == "dev" {
 		return fmt.Sprintf("host=%s user=%s password=%s dbname=%s sslmode=disable", dbHost, dbUser, dbPwd, dbName)
 	} else {
-		return fmt.Sprintf(
-			"%s:%s@unix(/cloudsql/%s)/%s", dbUser, dbPwd, dbHost, dbName,
-		)
+		return dbURL
 	}
 }
