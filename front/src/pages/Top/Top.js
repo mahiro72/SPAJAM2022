@@ -12,7 +12,7 @@ const Top = ({setPage:setPage}) => {
         <Button 
           title='今すぐはじめる' 
           style={buttonStyles.topButton}
-          onPress={()=>{setPage("next")}}
+          onPress={()=>{setPage("select")}}
           color={"#21A0DB"}
         />
     </>
