@@ -21,3 +21,10 @@ func InitTemplateHandler(driver *sql.DB) handler.TemplateHandler {
 	templateHandler := handler.NewTemplateHandler(templateUsecase)
 	return templateHandler
 }
+
+func InitDrinkHandler(driver *sql.DB) handler.DrinkHandler {
+	iDrinkRepository := repository.NewDrinkRepository(driver)
+	drinkUsecase := usecase.NewDrinkUsecase(iDrinkRepository)
+	drinkHandler := handler.NewDrinkHandler(drinkUsecase)
+	return drinkHandler
+}

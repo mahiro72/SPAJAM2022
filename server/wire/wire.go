@@ -21,3 +21,12 @@ func InitTemplateHandler(driver *sql.DB) handler.TemplateHandler {
 	)
 	return nil
 }
+
+func InitDrinkHandler(driver *sql.DB) handler.DrinkHandler {
+	wire.Build(
+		repository.NewDrinkRepository,
+		usecase.NewDrinkUsecase,
+		handler.NewDrinkHandler,
+	)
+	return nil
+}
