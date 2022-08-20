@@ -1,8 +1,7 @@
-import React, { useState,useEffect } from "react";
+import React from "react";
 
 import { Button, View, Text, Dimensions, TouchableHighlight,Image } from "react-native";
 import { useTimer } from "react-timer-hook";
-import Title from "../../components/TItle";
 
 import SecPeriod from "./SecPeriod";
 
@@ -29,9 +28,9 @@ function MyTimer({ expiryTimestamp,initTimeSec ,setPage}) {
         onExpire: () => console.warn("onExpire called"),
       });
 
-  useEffect(() => {
-    pause();
-  }, [])
+//   useEffect(() => {
+//     pause();
+//   }, [])
 
   const getSeconds = (h,m,s)=>{
     return h*3600+m*60+s;

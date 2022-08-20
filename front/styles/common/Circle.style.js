@@ -31,8 +31,8 @@ const circleStyles = StyleSheet.create({
     },
     feedbackCircle:{
         borderRadius: Math.round(Dimensions.get('window').width + Dimensions.get('window').height) / 2,
-        width: Dimensions.get('window').width * 0.90,
-        height: Dimensions.get('window').width * 0.70,
+        width: Dimensions.get('window').width * 0.95,
+        height: Dimensions.get('window').width * 0.8,
         backgroundColor:'#fff',
         justifyContent: 'center',
         alignItems: 'center',
