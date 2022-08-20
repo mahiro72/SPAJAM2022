@@ -8,7 +8,6 @@ import (
 	"go.uber.org/zap"
 
 	myError "github.com/mahiro72/SPAJAM2022/server/core/error"
-	"github.com/mahiro72/SPAJAM2022/server/presen/request"
 	"github.com/mahiro72/SPAJAM2022/server/presen/response"
 	"github.com/mahiro72/SPAJAM2022/server/usecase"
 )
@@ -67,18 +66,28 @@ func (dh *drinkHandler) Update(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var req request.DrinkUpdateRequest
-	decoder := json.NewDecoder(r.Body)
-	err := decoder.Decode(&req)
-
+	id, err := strconv.Atoi(r.FormValue("id"))
 	if err != nil {
 		zap.Error(err)
+	}
+	if id == 0 {
+		zap.Error(myError.ErrIdNotFound)
+	}
+
+	status := r.FormValue("status")
+	var delta int
+	if status == "up" {
+		delta = 1
+	} else if status == "down" {
+		delta = -1
+	} else {
+		zap.Error(myError.ErrInvalidStatus)
 	}
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusNoContent)
 
-	if err = dh.drinkUsecase.Update(r.Context(), req.ID, req.BestTime); err != nil {
+	if err = dh.drinkUsecase.Update(r.Context(), id, delta); err != nil {
 		zap.Error(err)
 	}
 }

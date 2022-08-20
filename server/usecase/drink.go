@@ -26,6 +26,11 @@ func (du *drinkUsecase) Get(ctx context.Context, id int) (drink *entity.Drink, e
 	return
 }
 
-func (du *drinkUsecase) Update(ctx context.Context, drinkID int, bestTime int) error {
-	return du.drinkRepository.Update(ctx, drinkID, bestTime)
+func (du *drinkUsecase) Update(ctx context.Context, drinkID int, delta int) error {
+	de, err := du.drinkRepository.Get(ctx, drinkID)
+	if err != nil {
+		return err
+	}
+	newBestTime := de.BestTime + delta
+	return du.drinkRepository.Update(ctx, drinkID, newBestTime)
 }
