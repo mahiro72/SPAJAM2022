@@ -6,9 +6,11 @@ import (
 
 func Layers(handler http.Handler) http.Handler {
 	return Recovery(
-		Context(
-			Logger(
-				handler,
+		CORS(
+			Context(
+				Logger(
+					handler,
+				),
 			),
 		),
 	)
