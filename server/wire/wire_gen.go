@@ -21,3 +21,10 @@ func InitDrinkHandler(driver *sql.DB) handler.DrinkHandler {
 	drinkHandler := handler.NewDrinkHandler(drinkUsecase)
 	return drinkHandler
 }
+
+func InitFeedbackHandler(driver *sql.DB) handler.FeedbackHandler {
+	iFeedbackRepository := repository.NewFeedbackRepository(driver)
+	feedbackUsecase := usecase.NewFeedbackUsecase(iFeedbackRepository)
+	feedbackHandler := handler.NewFeedbackHandler(feedbackUsecase)
+	return feedbackHandler
+}
