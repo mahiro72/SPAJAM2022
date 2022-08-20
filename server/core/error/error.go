@@ -4,5 +4,5 @@ import "errors"
 
 var (
 	ErrMethodNotFound = errors.New("method not found")
-	ErrTokenNotFound  = errors.New("token not found")
+	ErrIdNotFound     = errors.New("id not found")
 )
