@@ -35,7 +35,7 @@ export default function App() {
       {
         page==="select"
         ?<>
-          <Select />
+          <Select setPage={setPage}/>
           <Button onPress={()=>{setPage("timer")}} title={"next"} />
           <Button onPress={()=>{setPage("top")}} title={"back"} />
         </>
