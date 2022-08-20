@@ -15,13 +15,6 @@ import (
 
 // Injectors from wire.go:
 
-func InitTemplateHandler(driver *sql.DB) handler.TemplateHandler {
-	iTemplateRepository := repository.NewTemplateRepository(driver)
-	templateUsecase := usecase.NewTemplateUsecase(iTemplateRepository)
-	templateHandler := handler.NewTemplateHandler(templateUsecase)
-	return templateHandler
-}
-
 func InitDrinkHandler(driver *sql.DB) handler.DrinkHandler {
 	iDrinkRepository := repository.NewDrinkRepository(driver)
 	drinkUsecase := usecase.NewDrinkUsecase(iDrinkRepository)

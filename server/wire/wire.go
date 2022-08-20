@@ -13,15 +13,6 @@ import (
 	"github.com/mahiro72/SPAJAM2022/server/usecase"
 )
 
-func InitTemplateHandler(driver *sql.DB) handler.TemplateHandler {
-	wire.Build(
-		repository.NewTemplateRepository,
-		usecase.NewTemplateUsecase,
-		handler.NewTemplateHandler,
-	)
-	return nil
-}
-
 func InitDrinkHandler(driver *sql.DB) handler.DrinkHandler {
 	wire.Build(
 		repository.NewDrinkRepository,
