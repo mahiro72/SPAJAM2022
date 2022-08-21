@@ -28,6 +28,12 @@ const fontStyles = StyleSheet.create({
         fontWeight:'bold',
         color: "#333"
     },
+	feedbackText:{
+        margin:20,
+        fontSize:20,
+        fontWeight:'bold',
+        color: "#333"
+    },
     selectTitle:{
         fontSize: 30,
         fontWeight: "bold",
