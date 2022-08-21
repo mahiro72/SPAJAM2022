@@ -3,9 +3,11 @@
 INSERT INTO
 	drink (name, best_time)
 VALUES
-	('コーラ', 15),
-	('ビール', 15),
-	('モンスター', 10);
+	('お茶', 30),
+	('ビール', 50),
+	('スポドリ', 35),
+	('コーラ', 40),
+	('紅茶', 30);
 
 INSERT INTO
 	feedback (drink_id, cold_time, evaluate)
