@@ -17,7 +17,11 @@ const Icon = () => {
             }}
             underlayColor = '#ccc'
         >
-            <Image style={{width:'65%'}} source={girlImg} />
+            <Image 
+                style={{height: 200,width:200}}
+                resizeMode='contain'
+                source={girlImg} 
+            />
         </TouchableHighlight>
     </>
   )

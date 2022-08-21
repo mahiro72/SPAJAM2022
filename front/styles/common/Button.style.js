@@ -2,10 +2,11 @@ import { StyleSheet } from "react-native";
 
 const buttonStyles = StyleSheet.create({
     topButton: {
-      width: 250,
-      height: 100,
       margin:10,
-      backgroundColor: "#21A0DB"
+      marginTop:30,
+      padding:30,
+      backgroundColor: "#C8A45B",
+      fontSize:80,
     }
 });
 export default buttonStyles;

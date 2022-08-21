@@ -8,7 +8,7 @@ import buttonStyles from '../../../styles/common/Button.style'
 // style
 import scrollStyles from '../../../styles/common/Scroll.style';
 
-const Select = ({setPage}) => {
+const Select = ({setPage,setDrinkId,drinkId}) => {
   return (
     <View style={{marginTop:60,alignItems: 'center'}}>
       <SelectTitle title={"どの飲み物を冷やしますか?"}/>
@@ -18,17 +18,11 @@ const Select = ({setPage}) => {
       {
         drinkData.map((drink,idx)=>{
           return (
-            <SecDrink key={idx} drink={drink} />
+            <SecDrink key={idx} selectDrinkId={drinkId} drinkId={idx+1} drink={drink} setDrinkId={setDrinkId} setPage={setPage}/>
           )
         })
       }
       </ScrollView>
-	  <Button 
-          title='タイマーを開始する' 
-          style={buttonStyles.topButton}
-          onPress={()=>{setPage("timer")}}
-          color={"#C8A45B"}
-        />
     </View>
   )
 }

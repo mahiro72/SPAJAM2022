@@ -19,6 +19,7 @@ import styles from './styles/App.style';
 
 export default function App() {
   const [page, setPage] = useState("top")
+  const [drinkId,setDrinkId] = useState(1)
   return (
     <ImageBackground 
       style={{
@@ -35,9 +36,7 @@ export default function App() {
       {
         page==="select"
         ?<>
-          <Select setPage={setPage}/>
-          <Button onPress={()=>{setPage("timer")}} title={"next"} />
-          <Button onPress={()=>{setPage("top")}} title={"back"} />
+          <Select setPage={setPage} setDrinkId={setDrinkId} drinkId={drinkId}/>
         </>
         :null
       }
@@ -49,7 +48,7 @@ export default function App() {
       }
       {
         page==="feedback"
-        ?<Feedback setPage={setPage}/>
+        ?<Feedback setPage={setPage} drinkId={drinkId}/>
         :
         null
       }
