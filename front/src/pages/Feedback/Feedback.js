@@ -19,7 +19,7 @@ const Feedback = ({setPage}) => {
                 underlayColor = '#ccc'
             >
             <View style={{margin:40}}>
-                <Text style={fontStyles.drinkText}>
+                <Text style={fontStyles.feedbackText}>
                     冷え具合はどうでしたか?{"\n"}以下の3つから選んでください!
                 </Text>
                 <View>
